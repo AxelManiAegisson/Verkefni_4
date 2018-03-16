@@ -1,0 +1,13 @@
+/*
+ * Using functions in SASS
+ */ 
+
+$gender: boy;
+$myColor: if($gender=="boy", #00f, #F00);
+
+@mixin border-radius($radius: 5px) {
+    -mox-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
