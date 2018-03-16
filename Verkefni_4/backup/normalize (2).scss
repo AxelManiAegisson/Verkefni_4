@@ -1,0 +1,686 @@
+*, *:before, *:after {
+    box-sizing: border-box; 
+}
+
+/*heimild: https://gridbyexample.com/examples/example13/ */
+
+/* ====== GRID Area ====== */
+.topnav {
+  grid-area: topnav;
+}
+header {
+  grid-area: header;
+}
+.content {
+  grid-area: content;
+}
+footer {
+  grid-area: footer;
+}
+
+/*content*/
+.midja {
+  grid-area: midja;
+}
+.haegri {
+  grid-area: haegri;
+}
+.vinstri {
+  grid-area: vinstri;
+}
+/* ====== GRID Template Areas ===== */
+body {
+  display: grid;
+  grid-gap: 0;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer"
+    "topnav" 
+}
+.content {
+  display: grid;
+  grid-gap: 0;
+  grid-template-areas:
+    "midja"
+    "haegri"
+    "vinstri"
+}
+
+/* ====== Base litir + padding ====== */
+
+body {
+  line-height: 1.5em;
+}
+.topnav {
+  background-color: black;
+}
+header {
+  background-color: tomato; 
+}
+footer {
+  background-color: lightgreen; 
+  margin-bottom: 2em;
+}
+.midja {
+  background-color: skyblue; 
+}
+.vinstri, 
+.haegri {
+  background-color: black; 
+}
+
+header,
+footer,
+.midja,
+.vinstri, 
+.haegri {
+  padding: 1em; 
+}
+
+/* ====== leturstílar ====== */
+
+header h1 {
+  color: #fff;
+  line-height: 1.2;
+  font-weight: normal;
+}
+.midja h2 {
+  margin: .7em 0 .8em 0;
+}
+.midja h4 {
+  text-align: justify;
+  margin: .4em 0;
+}
+.midja p {
+  text-align: justify;
+}
+.hvitur {
+  color: white;
+}
+
+/* ========================================
+  Efnisyfirlit (mobile)
+  ======================================== */
+.topnav ul {
+  background: #1c2d1c;
+}
+.topnav input {
+  display: none;
+}
+.topnav label {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  border: 3px outset #999;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  padding: .2em .4em;
+  background-color: #069; 
+}
+.topnav input:checked ~ .topmenu {
+  position: fixed;
+  bottom: 2.2em;
+  left: 0;
+
+  transition: all .5s ease
+}
+.topmenu {
+  display: block;
+  position: fixed;
+  bottom: -10em;
+  left: 0;
+  width: 100%;
+  z-index: 90;
+  padding: 0;
+  margin: 0;
+  list-style: none; 
+
+  transition: all .4s ease
+}
+.topmenu li {
+  border: 0;
+  border-bottom: 1px solid lime; 
+  padding: 0;
+  margin: 0;
+}
+.topmenu li {
+  border: 0;
+  padding: 0;
+  border-bottom: 1px solid lime;
+}
+.topmenu a {
+  display: block;     /* ath! */
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: .4em 2em; 
+}
+
+
+/* =======================================
+   Myndvinnsla  
+  ======================================== */
+
+/*  myndir <img> alltaf í 100% stærð munið að vinna og 
+    þjappa myndir í photoshop ! */
+
+img, video {
+  max-width: 100%;
+  height: auto; 
+}
+
+img{
+  display: block; /*ineline - white space */
+}
+figure{
+  margin: 0;
+  border: 1px solid orange;
+}
+.myndabox {
+  width: 162px;
+}
+/********** Social buttons **********/
+.sMedia {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 
+}
+.sMedia div {
+  height: 2.5em;
+  width: 2.5em;
+  margin: 0;
+  padding: .5em 0 0;
+}
+.sMedia a {
+  display: block;
+  margin: 0 .5em;
+  padding: 0;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.facebook {
+  background: blue;
+  transition: all 1s ease;
+}
+.youtube {
+  background: red;
+  transition: all 1s ease;
+}
+.twitter {
+  background: lightblue;
+  transition: all 1s ease;
+}
+.reddit {
+  background: crimson;
+  transition: all 1s ease;
+
+}
+/*============================
+            Icons
+  ============================*/
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../Fonts/icomoon.eot?od3m3j');
+  src:  url('../Fonts/icomoon.eot?od3m3j#iefix') format('embedded-opentype'),
+    url('../Fonts/icomoon.ttf?od3m3j') format('truetype'),
+    url('../Fonts/icomoon.woff?od3m3j') format('woff'),
+    url('../Fonts/icomoon.svg?od3m3j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-reddit:before {
+  content: "\eac6";
+}
+
+/******* Efnisyfirlit ********/
+
+
+/*  ========================================
+  Viðmið - breakpoints 30em = 480px + 
+  ========================================*/
+
+@media screen and (min-width: 30em) {  /* það má ekki setja slaufusvigann í næstu línu, þá virkar ekki viðmiðið */
+  .content {
+    grid-template-areas: 
+    "midja"
+    "vinstri"
+    "haegri";
+
+    grid-template-columns: 1fr 2fr 1fr ;
+  }
+
+  .myndabox {
+    display: grid;
+    grid-template-columns: 162px 162px;
+  }
+  
+}
+
+/*  ========================================
+  Viðmið - breakpoints 37.5em = 600px + 
+  ========================================*/
+@media screen and (min-width: 37.5em)  {
+  .content {
+    grid-template-areas: 
+      "haegri midja"
+      "vinstri midja";
+
+    grid-template-columns: 1fr 2fr;  
+  }
+  .myndabox {
+    grid-template-columns: repeat(4, 83, 4%)
+  }
+}
+
+/* ========================================
+  Viðmið - breakpoints 48em = 760px +
+  ======================================== */
+@media screen and (min-width: 48em)  {
+  body {
+    grid-template-areas: 
+      "topnav"
+      "header"
+      "content"
+      "footer";
+  }
+  .topnav label {
+    display: none;
+  }
+  .topmenu {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    position: relative;
+    top: 0;
+  }  
+  .topmenu li {
+    border: 0;
+    border-left: 1px solid lime;
+  }
+  .topmenu li:last-child {
+    border-right: 1px solid lime;
+  }
+}
+/*==============================
+  **********Animations**********
+  ==============================*/
+
+  .animation {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: kassi; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: kassi;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes kassi {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:130px; top:0px;}
+    50%  {background-color:blue; left:130px; top:150px;}
+    75%  {background-color:green; left:0px; top:150px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+.flash {
+    animation-name: texti;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    text-align: center;
+}
+@keyframes texti {
+  from {color: red;}
+  to   {color: blue;}
+}
+.element {
+  height: 50px;
+  width: 50px;
+  margin: 0 auto;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: purple;
+
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: blue;
+  }
+}
+.bolti {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-color: red;
+  animation-name: skoppa;
+  animation-duration: .001s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+}
+@keyframes skoppa {
+  0% {background-color:red; border-radius:100%; left:0px; top:200px;}
+  25% {background-color:blue; border-radius:100%; left:140px; top:200px;}
+  50% {background-color:red; border-radius:100%; left:0px; top:200px;}
+  75% {background-color:blue; border-radius:100%; left:140px; top:200px;}
+  100% {background-color:red; border-radius:100%; left:0px; top:200px;}
+}
+
+/* ========================================
+                  Modal             
+   ======================================== */
+
+   $yellow: #FFD300; 
+$white: #f2f1f1;
+$black: #000000;
+$black-light: #5E5E5E;
+
+//font weights:
+$thin: 300;
+$normal: 400;
+$bold: 900;
+
+body {
+  background: $yellow;
+  color: $black-light;
+  text-shadow: 1px 1px 1px #fff;
+  text-align: center;
+}
+
+h1 { 
+    font-size: 1.5em;
+    font-size: 7vw;
+    line-height: 1.2; 
+    margin: 0;
+    
+    @include bp(500) {
+        font-size: 2.25em;
+        font-size: 7vw;
+    }
+  
+    @include bp(1000) {
+        font-size: 4.5em;
+    }
+}
+
+h2 {
+    font-size: 1em;
+    line-height: 1.2;
+    margin: 1.414em 0 0.5em;
+    
+    @include bp(500) {
+        font-size: 1.5em;
+    }
+    
+    @include bp(800) {
+        font-size: 1.8em;
+    }
+}
+
+h1 { 
+  color: $black;
+  font-family: "Audiowide", cursive;
+  font-weight: $bold;
+  margin: 0.5em 0 2.5em;
+  span {
+      color:$yellow;
+  }
+}
+
+.wrap {
+  padding: 1em;
+  text-align: center;
+  @include bp(700) { padding: 1em 2em; }
+}
+
+.modal {
+  background: #yellow;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  padding: 1em;
+}
+@media (min-width: 43.75em) {
+  .modal {
+    padding: 1.5em;
+  }
+}
+.modal > label {
+  background: #FFD300;
+  border: 1px solid #f0c600;
+  border-radius: .2em;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.75em 1.5em;
+  text-shadow: 1px 1px 1px #yellow;
+  transition: all 0.55s;
+}
+.modal > label:hover {
+  transform: scale(0.97);
+}
+.modal__overlay {
+  background: #000000;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-shadow: none;
+  top: 0;
+  z-index: 600;
+}
+.modal__wrap {
+  padding: 1em 0;
+  position: relative;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+}
+@media (min-width: 50em) {
+  .modal__wrap {
+    padding: 1.75em;
+  }
+}
+@media (min-height: 37.5em) {
+  .modal__wrap {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -80%);
+  }
+}
+.modal__wrap label {
+  background: #FFD300;
+  border-radius: 50%;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.5em;
+  line-height: 1.5;
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  width: 1.5em;
+}
+.modal__wrap h2 {
+  color: #FFD300;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+.modal__wrap p {
+  color: #FFD300;
+  text-align: justify;
+}
+.modal input:focus ~ label {
+  transform: scale(0.97);
+}
+
+input {
+  position: absolute;
+  top: -1000px;
+}
+
+.modal__overlay {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -100;
+}
+
+input:checked ~ .modal__overlay {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 800;
+}
+
+
+/* ========================================
+  Viðmið - breakpoints 60em = 960px +
+  ======================================== */
+@media screen and (min-width: 60em) {
+  body {
+    max-width: 64em;
+    margin: 0 auto;
+  }
+  .content{
+    grid-template-areas: 
+    "vinstri midja haegri"; 
+
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  .myndabox {
+    grid-template-columns: repeat(4, 84%)
+  }
+  .sMedia {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    top: 4em;
+    left: -.5em;
+    height: 12em;
+    width: 3em;
+  }
+  input {
+   display: none;
+  }
+  label,
+  ul {
+    border: 1px solid #cecfd5;
+    border-radius: 6px;
+  }
+  label {
+    color: #0087cc;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px 9px;
+    transition: all .15s ease;
+  }
+  label:hover {
+    color: #ff7b29;
+  }
+  input:checked + label {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    color: #9799a7;
+  }
+  nav {
+    position: bottom;
+    overflow: hidden;
+    transition: all .15s ease;
+  }
+  input:checked ~ nav {
+    position: 500px;
+  }
+  ul {
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 0;
+    width: 100px;
+  }
+  li {
+    border-bottom: 1px solid #cecfd5;
+  }
+  li:last-child {
+    border-bottom: 0;
+  }
+  a {
+    color: #0087cc;
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff7b29;
+  }
+
+}
+/* ========================================
+  Viðmið - breakpoints 80em =1280px +
+  ======================================== */
+@media screen and (min-width: 80em) {
+  body {
+    max-width: 77em;
+    margin: 0 auto;
+  }
+  .myndabox {
+    max-width: 100%;
+    grid-template-columns: repeat(4,100%)
+  }
+  
+}
